@@ -8,6 +8,20 @@
 /* Setting TextArea Div Name */
 var source_div = "textarea";
 
+/* Auto Grow TextArea  */
+document.getElementById(source_div).addEventListener('keydown', autosize);
+             
+function autosize(){
+  var el = this;
+  setTimeout(function(){
+    el.style.cssText = 'height:auto; padding:0';
+    // for box-sizing other than "content-box" use:
+    // el.style.cssText = '-moz-box-sizing:content-box';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  },0);
+}
+
+
 /* Function To Get .value From A Div ID */
 function getDivValue(div) {
     return document.getElementById(div).value;
@@ -52,13 +66,13 @@ function switchLabelReset(){
 
 /* Copy Button */
 function copyButtonClear() {
-    document.getElementById("textarea").classList.remove("has-text-weight-semibold");
+    document.getElementById(source_div).classList.remove("has-text-weight-semibold");
     document.getElementById("copy-button").setAttribute("data-tooltip", "Copy");
     document.getElementById("copy-button").setAttribute("class", "button is-link");
     document.getElementById("descriptionlabel").innerText = "Give it a try! 👇";
     document.getElementById("copy-button").innerText = "Copy";
-    document.getElementById("textarea").classList.remove("is-success")
-    document.getElementById("textarea").classList.remove("is-info");
+    document.getElementById(source_div).classList.remove("is-success")
+    document.getElementById(source_div).classList.remove("is-info");
 }
 function copyButton() {
     /* Get the text field */
@@ -74,8 +88,8 @@ function copyButton() {
         document.getElementById("copy-button").setAttribute("class", "button is-link is-success");
         document.getElementById("copy-button").innerText = "Copied";
         document.getElementById("descriptionlabel").innerText = "Text Copied ✔";
-        document.getElementById("textarea").classList.add("is-success")
-        document.getElementById("textarea").classList.remove("is-info");
+        document.getElementById(source_div).classList.add("is-success")
+        document.getElementById(source_div).classList.remove("is-info");
     }
     else{
      
@@ -88,10 +102,10 @@ function copyButton() {
 /* Adds Reset */
 function addReset(text) {
     document.getElementById("belowbanner").scrollIntoView();
-    document.getElementById("textarea").classList.remove("is-success")
-    document.getElementById("textarea").classList.add("is-info");
+    document.getElementById(source_div).classList.remove("is-success")
+    document.getElementById(source_div).classList.add("is-info");
     if (text.trim().length > 0) {
-        document.getElementById("textarea").classList.add("has-text-weight-semibold");
+        document.getElementById(source_div).classList.add("has-text-weight-semibold");
         document.getElementById("reset").removeAttribute("disabled");
         document.getElementById("reseticon").removeAttribute("style");
         revision_history.push(text);
