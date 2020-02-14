@@ -1,7 +1,9 @@
-@media screen and (min-width: 600px) {
-   .banner{
-      
-   }
+@media screen and (max-width: 600px) {
+  .columns {
+    margin-left: 0rem;
+    margin-right: 0rem; 
+
+}
   }
 
 .icon-undo:before {
