@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-gb" >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+  <title>Switch Case | UPPER, lower, aLtErNaTe, Slug-Text, Converter</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Search Engine -->
+  <meta name="description"
+    content="Text/sentence conversion into random, sentence, capital, upper, lower, slug case including illegal case removal! Privacy friendly, quick, free and open source!">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="Switch Case | UPPER, lower, aLtErNaTe, Slug-Text, Converter">
+  <meta itemprop="description"
+    content="Text/sentence conversion into random, sentence, capital, upper, lower, slug case including illegal case removal! Privacy friendly, quick, free and open source!">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Switch Case | UPPER, lower, aLtErNaTe, Slug-Text, Converter">
+  <meta name="twitter:description"
+    content="Text/sentence conversion into random, sentence, capital, upper, lower, slug case including illegal case removal! Privacy friendly, quick, free and open source!">
+  <meta property="twitter:image" content="https://casevert.netlify.com/images/og-image-square.jpg">
+
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta name="og:title" content="Switch Case | UPPER, lower, aLtErNaTe, Slug-Text, Converter">
+  <meta name="og:description"
+    content="Text/sentence conversion into random, sentence, capital, upper, lower, slug case including illegal case removal! Privacy friendly, quick, free and open source!">
+  <meta name="og:type" content="website">
+  <meta property="og:image" content="https://casevert.netlify.com/images/og-image-square.jpg">
+  <meta property="og:image:secure_url" content="https://casevert.netlify.com/images/og-image-square.jpg" />
+
+  <link rel="stylesheet" href="/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/bulma-tooltip.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/icon-moon.css">
+</head>
+<body>
+  <!--[if lte IE 11]>
+<div class="notification is-danger is-marginless">
+ <strong>Notice:</strong> Your Browser/Version May Not Be Compatible With This Site
+</div>
+<![endif]-->
+<div id="iealert"></div>
+  <section class="hero is-medium is-dark is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Convert your text painlessly.
+        </h1>
+        <h2 class="subtitle">
+          This tool converts the case of any text <span class="typewrite" data-period="2000"
+            data-type='[ "UPPER CASE", "lower case", "Capital Case", "a-sluggified-text", "AlTeRnAtE CaSe", "escaped%20text" ]'></span>
+          with a simple click.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <div class="container" id="belowbanner">
+    <div class="columns" style=" margin-bottom: 0px !important; ">
+      <div class="column">
+        <section class="section">
+          <div class="container">
+            <div class="field">
+              <label class="label" id="descriptionlabel">Give it a try! 👇</label>
+              <div class="control">
+                <textarea class="textarea" aria-label="Textbox To Enter Text" onkeypress="copyButtonClear()"
+                  placeholder="Enter/paste your text here. Click any of the buttons below."
+                  value="Enter/paste your text here. Click any of the buttons below." id="textarea"></textarea>
+              </div>
+            </div>
+            <div class="field is-grouped is-grouped">
+              <div class="control">
+                <button class="button is-link" id="copy-button" onclick="copyButton()" aria-label="Copy Button">Copy</button>
+              </div>
+              <div>
+                <div class="control">
+                  <button class="button is-danger" id="reset" disabled><span id="reseticon" style="display:none;" aria-label="Undo Button"><span class="icon-undo"></span> &nbsp; </span>Undo</button>
+                </div>
+              </div>
+              </div>
+              <label class="label">🔡 Change Case:</label>
+              <div class="field is-grouped is-grouped-multiline is-center">
+              <div class="control">
+                <button id="uc" class="button is-link is-light has-tooltip-bottom"
+                  data-tooltip="Converts all text to upper case" aria-label="Convert to UPPER CASE">UPPER CASE</button>
+              </div>
+              <div class="control">
+                <button id="lc" class="button is-link is-light" data-tooltip="Converts all text to lower case" aria-label="Convert to lower case">lower<meta property="og:image" content="/images/og-image-square.jpg">
+                  case</button>
+              </div>
+              <div class="control">
+                <button id="cc" class="button is-link is-light"
+                  data-tooltip="Capitalizes first letter of each word" aria-label="Convert to Capital Case">Capital Case</button>
+              </div>
+              <div class="control">
+                <button id="sc" class="button is-link is-light"
+                  data-tooltip="Capitalizes first letter of each sentence. &#10; &#013; Converts remaining characters to lowercase." aria-label="Convert to Sentence Case">Sentence
+                  case</button>
+              </div>
+              
+              <div class="control">
+                <button id="ac" class="button is-link is-light" data-tooltip="aLtErNaTe cAsE" aria-label="Convert to Alternate Case">AlTeRnAtE CaSe</button>
+              </div>
+              <div class="control">
+                <button id="rc" class="button is-link is-light" data-tooltip="RAnDomIZE CAsE" aria-label="Convert to Random Case">Randomize Case</button>
+              </div>
+            </div>
+              <label class="label">💻 For Developers:</label>
+              <div class="field is-grouped is-grouped-multiline is-center">
+              <div class="control">
+                <button id="st" class="button is-link is-light" data-tooltip="Converts a sentence into a '-' hyphen &#10; &#013; separated string." aria-label="Convert to link/slug">sluggify-text</button>
+              </div>
+              <div class="control">
+                <button id="ue" class="button is-link is-light" data-tooltip="URL Escape the entered text.'" aria-label="Escape Text">Escape
+                  Text</button>
+              </div>
+            </div>
+            <label class="label">🎉 Other Stuff: </label>
+            <div class="field is-grouped is-grouped-multiline is-center">
+              <div class="control">
+                <button id="ri" class="button is-link is-light"
+                  data-tooltip="Remove unrecognized or &#10; &#013; illegal � characters" aria-label="Remove illegal characters">Remove "�" illegal characters</button>
+              </div>
+              <div class="control">
+                <button id="res" class="button is-link is-light"
+                  data-tooltip="Remove Extra Spaces &#10; &#013; (Preserve line breaks)" aria-label="Remove extra spaces">Remove Extra Spaces</button>
+              </div>
+              <div class="control">
+                <button id="rlb" class="button is-link is-light"
+                  data-tooltip="Remove Line Breaks &#10; &#013; (Preserve extra spaces)" aria-label="Remove all line breaks, adds missing fullstops">Merge lines into single line</button>
+              </div>
+              <div class="control">
+                <button id="rmlb" class="button is-link is-light"
+                  data-tooltip="Remove Extra Line Breaks &#10; &#013; (Preserve extra spaces and single line breaks)" aria-label="Remove all line breaks">Remove Extra Line Breaks</button>
+              </div>
+              <div class="control">
+                <button id="flc" class="button is-link is-light"
+                  data-tooltip="Capitalizes first letter of each sentence. &#10; &#013; Ignores casing of the remaining sentence." aria-label="Capitalize first letter only">Only capitalize first letter</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="column">
+        <section class="section">
+          <h1 class="subtitle"> Why This Tool? </h1>
+          <div class="notification is-warning is-light" id="notification">
+            <button class="delete" aria-label="Remove Notification"></button>
+            All manipulation to text is done within your browser, and no text is sent to our servers. Revision histories
+            are cleared the moment you reload this page.
+          </div>
+          <p style="text-align: left;">
+            <span class="icon-circle-right"></span>&nbsp;Free. Lightweight. Quick. Works directly within the
+            browser.<br>
+            <span class="icon-circle-right"></span>&nbsp;Helpful for copywriters, designers, website developers and
+            digital marketers.<br>
+            <span class="icon-circle-right"></span>&nbsp;Remove any existing styling from your current text.<br>
+            <span class="icon-circle-right"></span>&nbsp;Switch up the sentence casing without worrying about
+            privacy.<br>
+            <span class="icon-circle-right"></span>&nbsp;Revision history created for each time you refresh this
+            window.<br>
+            <span class="icon-circle-right"></span>&nbsp;If you install this site on your homescreen, it'll even work offline!<br>
+            <span class="icon-circle-right"></span>&nbsp;Open source. View code on <a
+              href="http://github.com/hithismani/switchcase">Github</a>.<br>
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>SwitchCase.xyz</strong> by <a href="https://manikumar.in">Mani Kumar</a>. 🌟 View this package on <a
+          href="http://github.com/hithismani/switchcase">Github</a>.
+      </p>
+    </div>
+  </footer>
+  <script defer src="/js/index.js"></script>
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
+</body>
+</html>
