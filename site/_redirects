@@ -3,3 +3,11 @@
 
 # Redirect default Netlify subdomain to primary domain
 http://switchcase.netlify.com/* http://switchcase.xyz/:splat 301!
+
+# Redirect default Netlify subdomain to primary domain
+http://switchcase.netlify.com/* http://switchcase.xyz/:splat 301!
+
+# Redirect inner pages to github hosted pages
+http://switchcase.xyz/disclaimer https://github.com/hithismani/switchcase/blob/master/disclaimer.md 301!
+http://switchcase.xyz/license https://github.com/hithismani/switchcase/blob/master/license.md 301!
+http://switchcase.xyz/privacy https://github.com/hithismani/switchcase/blob/master/privacy-policy.md 301!

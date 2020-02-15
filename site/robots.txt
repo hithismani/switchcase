@@ -1,0 +1,3 @@
+Sitemap: https://switchcase.xyz/sitemap.xml
+User-agent:*
+Disallow:
