@@ -8,6 +8,6 @@ http://switchcase.netlify.com/* http://switchcase.xyz/:splat 301!
 http://switchcase.netlify.com/* http://switchcase.xyz/:splat 301!
 
 # Redirect inner pages to github hosted pages
-http://switchcase.xyz/disclaimer https://github.com/hithismani/switchcase/blob/master/disclaimer.md 301!
-http://switchcase.xyz/license https://github.com/hithismani/switchcase/blob/master/license.md 301!
-http://switchcase.xyz/privacy https://github.com/hithismani/switchcase/blob/master/privacy-policy.md 301!
+/disclaimer https://github.com/hithismani/switchcase/blob/master/disclaimer.md 301!
+/license https://github.com/hithismani/switchcase/blob/master/license.md 301!
+/privacy https://github.com/hithismani/switchcase/blob/master/privacy-policy.md 301!
