@@ -38,3 +38,15 @@ body {
 .tooltip.is-tooltip-multiline::before {
   white-space: pre-line !important;
 }
+
+span.text-before {
+  background: #3a3838;
+  color: #ffffff;
+  padding: 2px;
+}
+
+span.text-after {
+  background: #3273dc;
+  color: #ffffff;
+  padding: 2px;
+}

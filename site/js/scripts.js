@@ -3,6 +3,7 @@
 2) Check If IE Browser
 3) Autoresize Text Area Box
 4) TyperText Animation
+5) Reveal Features Table
 */
 
 
@@ -87,3 +88,21 @@ window.onload = function() {
     document.body.appendChild(css);
 };
 
+/*
+ 5) Reveal Features Table
+*/
+
+
+document.getElementById("features-button").addEventListener('click', function () {
+  if (document.getElementById("features-button").classList.contains("is-primary")){
+    document.getElementById("features-button").innerText = "Hide Feature Breakdown";
+  document.getElementById("features-table").classList.remove("is-hidden");
+  document.getElementById("features-button").classList.remove("is-primary");
+}
+else{
+  document.getElementById("features-button").innerText = "Show Feature Breakdown";
+  document.getElementById("features-table").classList.add("is-hidden");
+  document.getElementById("features-button").classList.add("is-primary");
+}
+  
+});

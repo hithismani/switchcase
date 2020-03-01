@@ -55,6 +55,7 @@
       </div>
     </div>
   </section>
+ <section>
   <div class="container" id="belowbanner">
     <div class="columns" style=" margin-bottom: 0px !important; ">
       <div class="column">
@@ -94,7 +95,7 @@
               </div>
               <div class="control">
                 <button id="sc" class="button is-link is-light"
-                  data-tooltip="Capitalizes first letter of each sentence. &#10; &#013; Converts remaining characters to lowercase." aria-label="Convert to Sentence Case">Sentence
+                  data-tooltip="Capitalizes first letter of each sentence.&#10; &#013;Converts remaining characters to lowercase." aria-label="Convert to Sentence Case">Sentence
                   case</button>
               </div>
               
@@ -108,10 +109,10 @@
               <label class="label">💻 For Developers:</label>
               <div class="field is-grouped is-grouped-multiline is-center">
               <div class="control">
-                <button id="st" class="button is-link is-light" data-tooltip="Converts a sentence into a '-' hyphen &#10; &#013; separated string." aria-label="Convert to link/slug">sluggify-text</button>
+                <button id="st" class="button is-link is-light" data-tooltip="Converts a sentence into a '-' hyphen&#10; &#013;separated string" aria-label="Convert to link/slug">sluggify-text</button>
               </div>
               <div class="control">
-                <button id="ue" class="button is-link is-light" data-tooltip="URL Escape the entered text.'" aria-label="Escape Text">Escape
+                <button id="ue" class="button is-link is-light" data-tooltip="URL Escape the entered text" aria-label="Escape Text">Escape
                   Text</button>
               </div>
             </div>
@@ -119,23 +120,23 @@
             <div class="field is-grouped is-grouped-multiline is-center">
               <div class="control">
                 <button id="ri" class="button is-link is-light"
-                  data-tooltip="Remove unrecognized or &#10; &#013; illegal � characters" aria-label="Remove illegal characters">Remove "�" illegal characters</button>
+                  data-tooltip="Remove unrecognized or&#10; &#013;illegal � characters" aria-label="Remove illegal characters">Remove "�" illegal characters</button>
               </div>
               <div class="control">
                 <button id="res" class="button is-link is-light"
-                  data-tooltip="Remove Extra Spaces &#10; &#013; (Preserve line breaks)" aria-label="Remove extra spaces">Remove Extra Spaces</button>
+                  data-tooltip="Remove Extra Spaces&#10; &#013;(Preserve line breaks)" aria-label="Remove extra spaces">Remove Extra Spaces</button>
               </div>
               <div class="control">
                 <button id="rlb" class="button is-link is-light"
-                  data-tooltip="Remove Line Breaks &#10; &#013; (Preserve extra spaces)" aria-label="Remove all line breaks, adds missing fullstops">Merge lines into single line</button>
+                  data-tooltip="Remove Line Breaks&#10; &#013;(Preserve extra spaces)" aria-label="Remove all line breaks, adds missing fullstops">Merge lines into single line</button>
               </div>
               <div class="control">
                 <button id="rmlb" class="button is-link is-light"
-                  data-tooltip="Remove Extra Line Breaks &#10; &#013; (Preserve extra spaces and single line breaks)" aria-label="Remove all line breaks">Remove Extra Line Breaks</button>
+                  data-tooltip="Remove Extra Line Breaks&#10; &#013;(Preserve extra spaces and single line breaks)" aria-label="Remove all line breaks">Remove Extra Line Breaks</button>
               </div>
               <div class="control">
                 <button id="flc" class="button is-link is-light"
-                  data-tooltip="Capitalizes first letter of each sentence. &#10; &#013; Ignores casing of the remaining sentence." aria-label="Capitalize first letter only">Only capitalize first letter</button>
+                  data-tooltip="Capitalizes first letter of each sentence.&#10; &#013;Ignores casing of the remaining sentence" aria-label="Capitalize first letter only">Only capitalize first letter</button>
               </div>
             </div>
           </div>
@@ -150,7 +151,8 @@
             are cleared the moment you reload this page.
           </div>
           <p style="text-align: left;">
-            <span class="icon-circle-right"></span>&nbsp;Free. Lightweight. Quick. Works directly within the
+            <span class="icon-circle-right"></span>&nbsp;
+            Easy Text/sentence conversion into random, sentence, capital, upper, lower, slug-case including illegal case removal.<br>  <span class="icon-circle-right"></span>&nbsp;Free. Lightweight. Quick. Works directly within the
             browser.<br>
             <span class="icon-circle-right"></span>&nbsp;Helpful for copywriters, designers, website developers and
             digital marketers.<br>
@@ -163,10 +165,139 @@
             <span class="icon-circle-right"></span>&nbsp;Open source. View code on <a
               href="http://GitHub.com/hithismani/switchcase" target="_blank">GitHub</a>.<br>
           </p>
+          <div class="control" style="margin-top:20px;">
+            <button class="button is-primary" data-tooltip="Reveal Feature Breakdown" aria-label="What does each button do?" id="features-button">View Feature Breakdown</button>
+                   </div>
         </section>
       </div>
     </div>
   </div>
+  <div>
+ </section>
+ <section>
+  <div class="container" id="aboutsection">
+    <div class="column">
+
+    <div class="table-container is-hidden" id="features-table">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <td  colspan="3" class="has-background-grey-darker has-text-white	 has-text-centered">Common Uses</td>
+            </tr>
+            <tr>
+              <th>Type</th>
+              <th>Function</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td>Uppercase</td>
+              <td>Converts all text into uppercase.</td>
+              <td>"this sentence." gets converted into "THIS SENTENCE."</td>
+            </tr>
+            <tr>
+              <td>Lowercase</td>
+              <td>Converts all text into lowercase.</td>
+              <td>"THIS TEXT." gets converted into "this text."</td>
+            </tr>
+            <tr>
+              <td>Capital Case</td>
+              <td>Capitalizes first letter of each word. Converts remaining characters in word to lowercase.</td>
+              <td>"this text." gets converted into "This Text."</td>
+            </tr>
+            <tr>
+              <td>Sentence Case</td>
+              <td>Capitalizes first letter of each word. Converts remaining sentence to lowercase.</td>
+              <td>"this tExT." gets converted into "This text."</td>
+            </tr>
+            <tr>
+              <td>AlTeRnAtE Case</td>
+              <td>Randomly capitalizes alternate letter of each word.</td>
+              <td>Click the button once "this text." gets converted into "ThIs tExT.".<br>Converts to "tHiS TeXt." if clicked again.</td>
+            </tr>
+            <tr>
+              <td>Randomize Case</td>
+              <td>Randomizes case of every letter in the sentence, each time you click the button.</td>
+              <td>"this text." may be converted into "tHiS tEXt.".</td>
+            </tr>
+            <tr><td colspan="3"><br></td></tr>
+
+          </tbody>
+          <thead>
+            <tr>
+              <td  colspan="3" class="has-background-grey-darker has-text-white	has-text-centered">For Developers</td>
+            </tr>
+            <tr>
+              <th>Type</th>
+              <th>Function</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+           
+           
+            <tr>
+              <td>Sluggify-Text</td>
+              <td>Converts all text into a hyphenated slug. Comes in handy when you're working with creating filenames.</td>
+              <td>"this sentence." gets converted into "this-sentence".</td>
+            </tr>
+            <tr>
+              <td>Escape Text</td>
+              <td>Url escape()'s text.</td>
+              <td>"this sentence." gets converted into "this%20sentence.".</td>
+            </tr>
+            <tr><td colspan="3"><br></td></tr>
+
+          </tbody>
+
+        <thead>
+          <tr>
+            <td  colspan="3" class="has-background-grey-darker has-text-white	 has-text-centered">Other Features</td>
+          </tr>
+          <tr>
+            <th>Type</th>
+            <th>Function</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+                 
+          <tr>
+            <td>Remove illegal � characters</td>
+            <td>Removes unrecognized or illegal "�" characters from the sentence.</td>
+            <td>"this � sentence." gets converted into "this  sentence.".</td>
+          </tr>
+          <tr>
+            <td>Remove Extra Space</td>
+            <td>Remove extra spaces from the sentence. Preserve line breaks.</td>
+            <td>"this  sentence." gets converted into "this sentence.".</td>
+          </tr>
+          <tr>
+            <td>Merge lines into single line</td>
+            <td>Remove all line breaks, adds missing fullstops.</td>
+            <td>"this sentence <br> this sentence." <br>gets converted into "this sentence. this sentence.".</td>
+          </tr>
+          <tr>
+            <td>Remove Extra Line Breaks</td>
+            <td>Remove Extra Line Breaks. Preserve extra spaces and single line breaks.</td>
+            <td>"this sentence <br> this sentence." <br>gets converted into "this sentence. this sentence.".</td>
+          </tr>
+          <tr>
+            <td>Only capitalize first letter</td>
+            <td>Capitalizes first letter of each sentence.Ignores casing of the remaining sentence.</td>
+            <td>"this sentEnCe." <br>gets converted into "This SentEnCe.".</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  </div>
+
+
+    
+  
+ </section>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
