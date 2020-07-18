@@ -144,18 +144,32 @@ switchLabel();
     setDivValue(source_div, textFormatted);
 });
 
-/* Convert Text To Sentence Case ("SC"), Lowercase everything that isn't first character */
+/* Convert Text To Sentence Case ("SC"), Lowercase everything that isn't first character. This was tricky! */
 document.getElementById("sc").addEventListener("click", function () {
     copyButtonClear();
-switchLabel();
+    switchLabel();
     addReset(getDivValue(source_div));
-    text = getDivValue(source_div).split(".");
+    text = getDivValue(source_div).split("\n"); // the usual, split into lines.
     formattedList = [];
-    for (i = 0; i < text.length; i++) {
-        text[i] = text[i].toLowerCase();
-        formattedList.push(text[i].replace(text[i].trim().charAt(0), text[i].trim().charAt(0).toUpperCase()));
+    for (i = 0; i < text.length; i++) { 
+        sentenceSplit = text[i].split(/(?=\.|\?|\!|\:|\;)/) //split each line based on sentence marks. (!,?,:,;)
+        sentenceFormatted = []
+        for (j = 0; j < sentenceSplit.length; j++){
+        
+            sentenceSplit[j] = sentenceSplit[j].toLowerCase(); // transform entire string to lowercase
+            
+            if (/[a-z]/i.exec(sentenceSplit[j]) !== null){ // If the sentence has a valid alphabet, find it's index, else return skip to next sentence in loop
+            index =  /[a-z]/i.exec(sentenceSplit[j]).index; 
+            //Push sentence to SentenceFormatted array
+            sentenceFormatted.push(sentenceSplit[j].replace(sentenceSplit[j].charAt(index), sentenceSplit[j].charAt(index).toUpperCase().trim()));
+        }
+
+        }
+       formattedList.push(sentenceFormatted.join(""));
+        
     }
-    textFormatted = formattedList.join(".");
+    // put everything together, but add line breaks back
+    textFormatted = formattedList.join("\n");
     setDivValue(source_div, textFormatted);
 });
 
