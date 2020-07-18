@@ -296,6 +296,21 @@ switchLabel();
     setDivValue(source_div, textFormatted);
 });
 
+/* Snake case ("snc") Conversion. */
+document.getElementById("snc").addEventListener("click", function () {
+    copyButtonClear();
+switchLabel();
+    addReset(getDivValue(source_div));
+    text = getDivValue(source_div).split("\n");
+    formattedList = [];
+    for (i = 0; i < text.length; i++) {
+        text[i] = text[i].toLowerCase();
+        formattedList.push(slugify(text[i], "_"));
+    }
+    textFormatted = formattedList.join("\n");
+    setDivValue(source_div, textFormatted);
+});
+
 /* URL Escape ("UE") Sentence. */
 document.getElementById("ue").addEventListener("click", function () {
     copyButtonClear();
