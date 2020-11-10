@@ -1,6 +1,5 @@
 /* Assign source_div with textarea id name if you haven't already */
 
-
 /* Function To Get .value From A Div ID */
 function getDivValue(div) {
     return document.getElementById(div).value;
@@ -22,7 +21,7 @@ function onlyUnique(value, index, self) {
 
 function switchLabel(){
     if (document.getElementById(source_div).value.trim().length > 0) {
-    document.getElementById("descriptionlabel").innerText = "Hit The Copy Button When You're Ready! 🎨";
+    document.getElementById("descriptionlabel").innerText = "✅ Done! Hit The Copy Button When You're Ready!";
     }
     else{
         switchLabelReset();
@@ -45,7 +44,7 @@ function switchLabelReset(){
 
 /* Copy Button */
 function copyButtonClear() {
-    document.getElementById(source_div).classList.remove("has-text-weight-semibold");
+    //document.getElementById(source_div).classList.remove("has-text-weight-semibold");
     document.getElementById("copy-button").setAttribute("data-tooltip", "Copy");
     document.getElementById("copy-button").setAttribute("class", "button is-link");
     document.getElementById("descriptionlabel").innerText = "Give it a try! 👇";
@@ -84,7 +83,7 @@ function addReset(text) {
     document.getElementById(source_div).classList.remove("is-success")
     document.getElementById(source_div).classList.add("is-info");
     if (text.trim().length > 0) {
-        document.getElementById(source_div).classList.add("has-text-weight-semibold");
+        //document.getElementById(source_div).classList.add("has-text-weight-semibold");
         document.getElementById("reset").removeAttribute("disabled");
         document.getElementById("reseticon").removeAttribute("style");
         revision_history.push(text);
@@ -229,6 +228,526 @@ switchLabel();
     addReset(getDivValue(source_div));
     text = getDivValue(source_div).replace(/(\r\n|\r|\n){2,}/g, '$1\n');
     setDivValue(source_div, text);
+});
+
+/* For Instagram: BOLD ("fi-bold"). */
+
+/* Replacements */
+var fi_switch = [
+    {
+      "plain": "a",
+      "bold": "𝐚",
+      "script": "𝒶",
+      "script_bold": "𝓪",
+      "monospaced": "𝚊"
+    },
+    {
+      "plain": "b",
+      "bold": "𝐛",
+      "script": "𝒷",
+      "script_bold": "𝓫",
+      "monospaced": "𝚋"
+    },
+    {
+      "plain": "c",
+      "bold": "𝐜",
+      "script": "𝒸",
+      "script_bold": "𝓬",
+      "monospaced": "𝚌"
+    },
+    {
+      "plain": "d",
+      "bold": "𝐝",
+      "script": "𝒹",
+      "script_bold": "𝓭",
+      "monospaced": "𝚍"
+    },
+    {
+      "plain": "e",
+      "bold": "𝐞",
+      "script": "ℯ",
+      "script_bold": "𝓮",
+      "monospaced": "𝚎"
+    },
+    {
+      "plain": "f",
+      "bold": "𝐟",
+      "script": "𝒻",
+      "script_bold": "𝓯",
+      "monospaced": "𝚏"
+    },
+    {
+      "plain": "g",
+      "bold": "𝐠",
+      "script": "ℊ",
+      "script_bold": "𝓰",
+      "monospaced": "𝚐"
+    },
+    {
+      "plain": "h",
+      "bold": "𝐡",
+      "script": "𝒽",
+      "script_bold": "𝓱",
+      "monospaced": "𝚑"
+    },
+    {
+      "plain": "i",
+      "bold": "𝐢",
+      "script": "𝒾",
+      "script_bold": "𝓲",
+      "monospaced": "𝚒"
+    },
+    {
+      "plain": "j",
+      "bold": "𝐣",
+      "script": "𝒿",
+      "script_bold": "𝓳",
+      "monospaced": "𝚓"
+    },
+    {
+      "plain": "k",
+      "bold": "𝐤",
+      "script": "𝓀",
+      "script_bold": "𝓴",
+      "monospaced": "𝚔"
+    },
+    {
+      "plain": "l",
+      "bold": "𝐥",
+      "script": "𝓁",
+      "script_bold": "𝓵",
+      "monospaced": "𝚕"
+    },
+    {
+      "plain": "m",
+      "bold": "𝐦",
+      "script": "𝓂",
+      "script_bold": "𝓶",
+      "monospaced": "𝚖"
+    },
+    {
+      "plain": "n",
+      "bold": "𝐧",
+      "script": "𝓃",
+      "script_bold": "𝓷",
+      "monospaced": "𝚗"
+    },
+    {
+      "plain": "o",
+      "bold": "𝐨",
+      "script": "ℴ",
+      "script_bold": "𝓸",
+      "monospaced": "𝚘"
+    },
+    {
+      "plain": "p",
+      "bold": "𝐩",
+      "script": "𝓅",
+      "script_bold": "𝓹",
+      "monospaced": "𝚙"
+    },
+    {
+      "plain": "q",
+      "bold": "𝐪",
+      "script": "𝓆",
+      "script_bold": "𝓺",
+      "monospaced": "𝚚"
+    },
+    {
+      "plain": "r",
+      "bold": "𝐫",
+      "script": "𝓇",
+      "script_bold": "𝓻",
+      "monospaced": "𝚛"
+    },
+    {
+      "plain": "s",
+      "bold": "𝐬",
+      "script": "𝓈",
+      "script_bold": "𝓼",
+      "monospaced": "𝚜"
+    },
+    {
+      "plain": "t",
+      "bold": "𝐭",
+      "script": "𝓉",
+      "script_bold": "𝓽",
+      "monospaced": "𝚝"
+    },
+    {
+      "plain": "u",
+      "bold": "𝐮",
+      "script": "𝓊",
+      "script_bold": "𝓾",
+      "monospaced": "𝚞"
+    },
+    {
+      "plain": "v",
+      "bold": "𝐯",
+      "script": "𝓋",
+      "script_bold": "𝓿",
+      "monospaced": "𝚟"
+    },
+    {
+      "plain": "w",
+      "bold": "𝐰",
+      "script": "𝓌",
+      "script_bold": "𝔀",
+      "monospaced": "𝚠"
+    },
+    {
+      "plain": "x",
+      "bold": "𝐱",
+      "script": "𝓍",
+      "script_bold": "𝔁",
+      "monospaced": "𝚡"
+    },
+    {
+      "plain": "y",
+      "bold": "𝐲",
+      "script": "𝓎",
+      "script_bold": "𝔂",
+      "monospaced": "𝚢"
+    },
+    {
+      "plain": "z",
+      "bold": "𝐳",
+      "script": "𝓏",
+      "script_bold": "𝔃",
+      "monospaced": "𝚣"
+    },
+    {
+      "plain": "A",
+      "bold": "𝐀",
+      "script": "𝒜",
+      "script_bold": "𝓐",
+      "monospaced": "𝙰"
+    },
+    {
+      "plain": "B",
+      "bold": "𝐁",
+      "script": "ℬ",
+      "script_bold": "𝓑",
+      "monospaced": "𝙱"
+    },
+    {
+      "plain": "C",
+      "bold": "𝐂",
+      "script": "𝒞",
+      "script_bold": "𝓒",
+      "monospaced": "𝙲"
+    },
+    {
+      "plain": "D",
+      "bold": "𝐃",
+      "script": "𝒟",
+      "script_bold": "𝓓",
+      "monospaced": "𝙳"
+    },
+    {
+      "plain": "E",
+      "bold": "𝐄",
+      "script": "ℰ",
+      "script_bold": "𝓔",
+      "monospaced": "𝙴"
+    },
+    {
+      "plain": "F",
+      "bold": "𝐅",
+      "script": "ℱ",
+      "script_bold": "𝓕",
+      "monospaced": "𝙵"
+    },
+    {
+      "plain": "G",
+      "bold": "𝐆",
+      "script": "𝒢",
+      "script_bold": "𝓖",
+      "monospaced": "𝙶"
+    },
+    {
+      "plain": "H",
+      "bold": "𝐇",
+      "script": "ℋ",
+      "script_bold": "𝓗",
+      "monospaced": "𝙷"
+    },
+    {
+      "plain": "I",
+      "bold": "𝐈",
+      "script": "ℐ",
+      "script_bold": "𝓘",
+      "monospaced": "𝙸"
+    },
+    {
+      "plain": "J",
+      "bold": "𝐉",
+      "script": "𝒥",
+      "script_bold": "𝓙",
+      "monospaced": "𝙹"
+    },
+    {
+      "plain": "K",
+      "bold": "𝐊",
+      "script": "𝒦",
+      "script_bold": "𝓚",
+      "monospaced": "𝙺"
+    },
+    {
+      "plain": "L",
+      "bold": "𝐋",
+      "script": "ℒ",
+      "script_bold": "𝓛",
+      "monospaced": "𝙻"
+    },
+    {
+      "plain": "M",
+      "bold": "𝐌",
+      "script": "ℳ",
+      "script_bold": "𝓜",
+      "monospaced": "𝙼"
+    },
+    {
+      "plain": "N",
+      "bold": "𝐍",
+      "script": "𝒩",
+      "script_bold": "𝓝",
+      "monospaced": "𝙽"
+    },
+    {
+      "plain": "O",
+      "bold": "𝐎",
+      "script": "𝒪",
+      "script_bold": "𝓞",
+      "monospaced": "𝙾"
+    },
+    {
+      "plain": "P",
+      "bold": "𝐏",
+      "script": "𝒫",
+      "script_bold": "𝓟",
+      "monospaced": "𝙿"
+    },
+    {
+      "plain": "Q",
+      "bold": "𝐐",
+      "script": "𝒬",
+      "script_bold": "𝓠",
+      "monospaced": "𝚀"
+    },
+    {
+      "plain": "R",
+      "bold": "𝐑",
+      "script": "ℛ",
+      "script_bold": "𝓡",
+      "monospaced": "𝚁"
+    },
+    {
+      "plain": "S",
+      "bold": "𝐒",
+      "script": "𝒮",
+      "script_bold": "𝓢",
+      "monospaced": "𝚂"
+    },
+    {
+      "plain": "T",
+      "bold": "𝐓",
+      "script": "𝒯",
+      "script_bold": "𝓣",
+      "monospaced": "𝚃"
+    },
+    {
+      "plain": "U",
+      "bold": "𝐔",
+      "script": "𝒰",
+      "script_bold": "𝓤",
+      "monospaced": "𝚄"
+    },
+    {
+      "plain": "V",
+      "bold": "𝐕",
+      "script": "𝒱",
+      "script_bold": "𝓥",
+      "monospaced": "𝚅"
+    },
+    {
+      "plain": "W",
+      "bold": "𝐖",
+      "script": "𝒲",
+      "script_bold": "𝓦",
+      "monospaced": "𝚆"
+    },
+    {
+      "plain": "X",
+      "bold": "𝐗",
+      "script": "𝒳",
+      "script_bold": "𝓧",
+      "monospaced": "𝚇"
+    },
+    {
+      "plain": "Y",
+      "bold": "𝐘",
+      "script": "𝒴",
+      "script_bold": "𝓨",
+      "monospaced": "𝚈"
+    },
+    {
+      "plain": "Z",
+      "bold": "𝐙",
+      "script": "𝒵",
+      "script_bold": "𝓩",
+      "monospaced": "𝚉"
+    },
+    {
+      "plain": "0",
+      "bold": "𝟎",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "1",
+      "bold": "𝟏",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "2",
+      "bold": "𝟐",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "3",
+      "bold": "𝟑",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "4",
+      "bold": "𝟒",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "5",
+      "bold": "𝟓",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "6",
+      "bold": "𝟔",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "7",
+      "bold": "𝟕",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "8",
+      "bold": "𝟖",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    },
+    {
+      "plain": "9",
+      "bold": "𝟗",
+      "script": "",
+      "script_bold": "",
+      "monospaced": ""
+    }
+  ]
+
+function check_num_alpha(input){
+  return /\d|\w/.test(input);
+}
+
+
+function transformCase(input,type){
+    console.log(input)
+    var output = ""
+    // Loop through characters
+    for (var i = 0; i < input.length;i++){
+      var found = false;
+      if (check_num_alpha(input[i])){
+        for (var j = 0; j < fi_switch.length;j++){
+          if(input[i]==fi_switch[j]["plain"]){
+            /* FOUND THIS IN JSON */
+            if(fi_switch[j][type] !== ""){
+              output = output + fi_switch[j][type];
+              found = true;
+              break;
+            }
+            break;
+            
+          } 
+        }
+      if (found == false){
+
+            /* NOT FOUND IN JSON */
+            output = output + input[i];
+     
+        }
+        else{
+          found = true;
+        }
+      }
+      else{
+        // NON DIGIT/STRING CHARACTER
+        output = output + input[i];
+      }
+          
+    }
+    console.log(output)
+    return output;
+}
+
+/* FI - BOLD */
+document.getElementById("fi-bold").addEventListener("click", function () {
+    copyButtonClear();
+    switchLabel();
+    addReset(getDivValue(source_div));
+    text = transformCase(getDivValue(source_div), "bold");
+    setDivValue(source_div, text);
+});
+
+/* FI - SCRIPT */
+document.getElementById("fi-script").addEventListener("click", function () {
+  copyButtonClear();
+  switchLabel();
+  addReset(getDivValue(source_div));
+  text = transformCase(getDivValue(source_div), "script");
+  setDivValue(source_div, text);
+});
+
+/* FI - BOLDED SCRIPT */
+document.getElementById("fi-script-bold").addEventListener("click", function () {
+  copyButtonClear();
+  switchLabel();
+  addReset(getDivValue(source_div));
+  text = transformCase(getDivValue(source_div), "script_bold");
+  setDivValue(source_div, text);
+});
+
+/* FI - monospaced */
+document.getElementById("fi-monospaced").addEventListener("click", function () {
+  copyButtonClear();
+  switchLabel();
+  addReset(getDivValue(source_div));
+  text = transformCase(getDivValue(source_div), "monospaced");
+  setDivValue(source_div, text);
 });
 
 /* Huge Thanks To The Folks In https://gist.GitHub.com/mathewbyrne/1280286 For Helping With This!*/
