@@ -92,24 +92,38 @@ function addReset(text) {
     }
 }
 
-/* Reset Button Event Listener */
+/* Notification Banner Event Listener */
 document.getElementById("notification").addEventListener("click", function () {
     document.getElementById("notification").setAttribute("style", "display:none;");
 
 });
 
-// Reset Button Event Listener
-document.getElementById("reset").addEventListener("click", function () {
-    copyButtonClear();
-switchLabel();
-    setDivValue(source_div, revision_history[revision_length - 1]);
-    revision_length = revision_length - 1;
-    if (revision_length <= 0) {
-        document.getElementById("reset").disabled = true;
-        document.getElementById("reseticon").setAttribute("style","display:none;");
-        revision_history = [];
-        revision_length = 0;
+//Function To Reset Data
+function revert(){
+  if (revision_history.length > 0){
+  copyButtonClear();
+  switchLabel();
+      setDivValue(source_div, revision_history[revision_length - 1]);
+      revision_length = revision_length - 1;
+      if (revision_length <= 0) {
+          document.getElementById("reset").disabled = true;
+          document.getElementById("reseticon").setAttribute("style","display:none;");
+          revision_history = [];
+          revision_length = 0;
+      }
     }
+}
+
+// Reset Event To CTRL Z Event Listener
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.key === 'z') {
+    revert()
+  }
+});
+
+// Reset ButtonTo Click Event Listener
+document.getElementById("reset").addEventListener("click", function () {
+  revert()
 });
 
 /* Convert Text To Upper Case (UC) */
